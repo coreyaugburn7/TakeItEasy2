@@ -14,6 +14,8 @@
 		70E9C74428532B9A00A12632 /* TakeItEasy2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70E9C74228532B9A00A12632 /* TakeItEasy2.xcdatamodeld */; };
 		70E9C74628532B9C00A12632 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70E9C74528532B9C00A12632 /* Assets.xcassets */; };
 		70E9C74928532B9C00A12632 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70E9C74728532B9C00A12632 /* LaunchScreen.storyboard */; };
+		F7D6D8642853993D007B8EB7 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D6D8632853993D007B8EB7 /* BooksViewController.swift */; };
+		F7D6D86628539966007B8EB7 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D6D86528539966007B8EB7 /* PDFViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		70E9C74528532B9C00A12632 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70E9C74828532B9C00A12632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70E9C74A28532B9C00A12632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7D6D8632853993D007B8EB7 /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
+		F7D6D86528539966007B8EB7 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		70E9C73828532B9A00A12632 /* TakeItEasy2 */ = {
 			isa = PBXGroup;
 			children = (
+				F7D6D86228539929007B8EB7 /* Books */,
 				70E9C73928532B9A00A12632 /* AppDelegate.swift */,
 				70E9C73B28532B9A00A12632 /* SceneDelegate.swift */,
 				70E9C73D28532B9A00A12632 /* ViewController.swift */,
@@ -68,6 +73,15 @@
 				70E9C74228532B9A00A12632 /* TakeItEasy2.xcdatamodeld */,
 			);
 			path = TakeItEasy2;
+			sourceTree = "<group>";
+		};
+		F7D6D86228539929007B8EB7 /* Books */ = {
+			isa = PBXGroup;
+			children = (
+				F7D6D8632853993D007B8EB7 /* BooksViewController.swift */,
+				F7D6D86528539966007B8EB7 /* PDFViewController.swift */,
+			);
+			path = Books;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +155,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7D6D8642853993D007B8EB7 /* BooksViewController.swift in Sources */,
 				70E9C73E28532B9A00A12632 /* ViewController.swift in Sources */,
 				70E9C73A28532B9A00A12632 /* AppDelegate.swift in Sources */,
+				F7D6D86628539966007B8EB7 /* PDFViewController.swift in Sources */,
 				70E9C74428532B9A00A12632 /* TakeItEasy2.xcdatamodeld in Sources */,
 				70E9C73C28532B9A00A12632 /* SceneDelegate.swift in Sources */,
 			);
