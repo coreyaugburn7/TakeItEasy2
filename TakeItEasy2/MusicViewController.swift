@@ -20,12 +20,13 @@ class MusicViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     var audioPlayer : AVAudioPlayer?
     var musicFile : String?
-    var timer : Timer?
+    var timer = Timer()
     var filteredData = [String]()
     var filtered = false
+    var myTime : Int = 0
     
     
-    @IBOutlet weak var timeStamp: UILabel!
+    @IBOutlet weak var startTime: UILabel!
     
     @IBOutlet weak var progressView: UIProgressView!
     
@@ -34,6 +35,10 @@ class MusicViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBOutlet weak var volumeSlider: UISlider!
     
     @IBOutlet weak var table: UICollectionView!
+    
+    @IBOutlet weak var resultTime: UILabel!
+    
+    
     
     var dataImg = ["Casemissingyou", "love", "Green_Day"]
     
@@ -122,9 +127,17 @@ class MusicViewController: UIViewController, UICollectionViewDelegate, UICollect
             if song.lowercased() == searchMusic.text!.lowercased(){
                 audioPlayer?.prepareToPlay()
                 timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+                let time = secToMin(seconds: Int(audioPlayer!.duration))
+                resultTime.text = String(format: "%02d", time.0) + String(format: "%02d", time.1)
+                
                 let filePath = Bundle.main.path(forResource: song, ofType: "mp3")
                 let newurl = URL(fileURLWithPath: filePath!)
 
+                
+                progressView.setProgress(0.0, animated: true)
+                                                myTime = 0
+                                                startTime.text = "00:00"
+                                                timer.invalidate()
 
                 do{
                     audioPlayer = try AVAudioPlayer(contentsOf: newurl)
@@ -137,11 +150,32 @@ class MusicViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     
+    
+    
     @objc func updateTime(){
         //sets time to result
-        timeStamp.text = audioPlayer!.currentTime.description
+        startTime.text = audioPlayer!.currentTime.description
         progressView.progress = Float(audioPlayer!.currentTime)/Float(audioPlayer!.duration)
-    
+
+        if(startTime.text! != resultTime.text!){
+            myTime = myTime + 1
+            let time = secToMin(seconds: myTime + 1)
+           
+            startTime.text = String(format:"%02d",time.0) + ":" + String(format: "%02d",time.1)
+            
+            var finalTime = secToMin(seconds: Int(audioPlayer!.duration))
+            
+            resultTime.text = String(format:"%02d", finalTime.0) + ":" + String(format: "%02d",finalTime.0)
+            
+            guard let total = audioPlayer?.duration else{
+                        return
+                }
+            progressView.setProgress(Float(myTime)*Float(1/total),animated:true)
+                                }
+
+        }
+        
+        
         
         func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
             if let text = searchMusic.text{
@@ -167,6 +201,10 @@ class MusicViewController: UIViewController, UICollectionViewDelegate, UICollect
             filtered = true
         }
     
-    
+    func secToMin(seconds: Int) ->(Int, Int)
+                        {
+                            return (((seconds % 3600) / 60),((seconds % 3600) % 60))
+                        }
 }
-}
+
+
