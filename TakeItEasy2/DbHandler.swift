@@ -78,9 +78,11 @@ class DbHandler{
         }
     }
     
-    func removeNote(name: String){
-        var fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Journal")
-        fetchRequest.predicate = NSPredicate(format: "name == %@", name)
+    func removeNote(title: String){
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Journal")
+        print("alive")
+        fetchRequest.predicate = NSPredicate(format: "title == %@", title)
+        print("stile alive")
         do{
             let entry = try context?.fetch(fetchRequest)
             context?.delete(entry?.first as! Journal)

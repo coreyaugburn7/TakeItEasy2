@@ -27,14 +27,30 @@ class NoteController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Note", bundle: nil)
         let note = storyboard.instantiateViewController(withIdentifier: "content") as! NoteContent
-        note.header = table[indexPath.row
-        ].title!
+        note.header = table[indexPath.row].title!
         note.body = table[indexPath.row].body!
         self.navigationController?.pushViewController(note, animated: true)
         //self.present(note, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            let row = indexPath.row
+            let val = (tableView.cellForRow(at: indexPath)?.textLabel?.text)! //provides the text inside of table cell
+            table.remove(at: row)
+            DbHandler.dbHandler.removeNote(title: val)
+            tableView.deleteRows(at: [indexPath], with: .left)
+            tv.reloadData()
+        }
+        
+    }
 
     override func viewDidAppear(_ animated: Bool) {
+        table = DbHandler.dbHandler.retrieveAllNote()
         tv.reloadData()
     }
     
@@ -51,7 +67,7 @@ class NoteController: UIViewController, UITableViewDelegate, UITableViewDataSour
         note.header = "new"
         note.body = "notes for you"
         self.navigationController?.pushViewController(note, animated: true)
-        //self.present(note, animated: true)
+        tv.reloadData()
 
     }
 }
