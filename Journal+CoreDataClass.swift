@@ -1,8 +1,8 @@
 //
 //  Journal+CoreDataClass.swift
-//  TakeItEasy
+//  TakeItEasy2
 //
-//  Created by admin on 6/8/22.
+//  Created by admin on 6/10/22.
 //
 //
 

@@ -25,18 +25,22 @@ class NoteController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Note", bundle: nil)
         let note = storyboard.instantiateViewController(withIdentifier: "content") as! NoteContent
         note.header = table[indexPath.row
         ].title!
         note.body = table[indexPath.row].body!
-        self.present(note, animated: true)
+        self.navigationController?.pushViewController(note, animated: true)
+        //self.present(note, animated: true)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        tv.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(table)
-        tv.reloadData()
         // Do any additional setup after loading the view.
     }
 

@@ -1,8 +1,8 @@
 //
 //  Journal+CoreDataProperties.swift
-//  TakeItEasy
+//  TakeItEasy2
 //
-//  Created by admin on 6/8/22.
+//  Created by admin on 6/10/22.
 //
 //
 
@@ -16,8 +16,8 @@ extension Journal {
         return NSFetchRequest<Journal>(entityName: "Journal")
     }
 
-    @NSManaged public var body: String?
     @NSManaged public var title: String?
+    @NSManaged public var body: String?
 
 }
 
