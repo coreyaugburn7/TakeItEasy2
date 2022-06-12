@@ -107,6 +107,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebR-RI-Gnu" userLabel="microphone">
+                                <rect key="frame" x="358" y="87" width="36" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="mic.fill" catalog="system" cornerStyle="capsule">
+                                    <color key="baseBackgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="mic:" destination="8fk-Fk-vl2" eventType="touchUpInside" id="LcZ-Wa-ufN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4LG-bJ-2FL"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
@@ -114,6 +125,7 @@
                     <navigationItem key="navigationItem" id="h8R-2a-1I2"/>
                     <connections>
                         <outlet property="content" destination="bgQ-TL-8Eo" id="CbR-uJ-m4E"/>
+                        <outlet property="microphone" destination="ebR-RI-Gnu" id="c9R-V7-jYM"/>
                         <outlet property="name" destination="Ihu-if-mFS" id="kMS-Hr-IRj"/>
                     </connections>
                 </viewController>
@@ -123,6 +135,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="mic.fill" catalog="system" width="108" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
