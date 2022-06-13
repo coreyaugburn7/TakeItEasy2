@@ -10,12 +10,14 @@ import CoreData
 
 class NoteController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var filter: [Journal]?
     var table = DbHandler.dbHandler.retrieveAllNote()
     
+    @IBOutlet weak var search: UISearchBar!
     @IBOutlet weak var tv: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return table.count
+        return filter!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,6 +46,17 @@ class NoteController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
     }
+    
+    /*
+    func SearchResults(searchBar: UISearchBar, textDidChange search: String){
+        
+        filter = search.isEmpty ? table : table.filter { (item: String) -> Bool in
+                    // If dataItem matches the searchText, return true to include it
+                    return item.range(of: search, options: .caseInsensitive, range: nil, locale: nil) != nil
+        }
+        tv.reloadData()
+    }
+     */
 
     override func viewDidAppear(_ animated: Bool) {
         table = DbHandler.dbHandler.retrieveAllNote()
@@ -52,8 +65,7 @@ class NoteController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(table)
-        // Do any additional setup after loading the view.
+        
     }
 
     @IBAction func add(_ sender: Any) {

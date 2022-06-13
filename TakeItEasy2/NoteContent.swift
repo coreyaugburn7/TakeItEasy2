@@ -28,19 +28,19 @@ class NoteContent: UIViewController {
     @IBAction func mic(_ sender: Any) {
         if isActive == false{
             isActive = true
-            microphone.backgroundColor = UIColor.red
+            microphone.tintColor = UIColor.red
             startSpeechRecog()
         }
         else{
             isActive = false
-            microphone.backgroundColor = UIColor.blue
+            microphone.tintColor = UIColor.blue
             stopSpeechRecog()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        microphone.backgroundColor = UIColor.blue
+        microphone.tintColor = UIColor.blue
         name.text = header
         content.text = body
     }
@@ -68,7 +68,7 @@ class NoteContent: UIViewController {
             }
             
             let msg = resp?.bestTranscription.formattedString
-            self.content.text.appending(msg!)
+            self.content.text = msg
         })
     }
     func stopSpeechRecog(){
