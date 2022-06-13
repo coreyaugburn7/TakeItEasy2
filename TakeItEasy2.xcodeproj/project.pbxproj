@@ -14,6 +14,16 @@
 		70E9C74428532B9A00A12632 /* TakeItEasy2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70E9C74228532B9A00A12632 /* TakeItEasy2.xcdatamodeld */; };
 		70E9C74628532B9C00A12632 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70E9C74528532B9C00A12632 /* Assets.xcassets */; };
 		70E9C74928532B9C00A12632 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70E9C74728532B9C00A12632 /* LaunchScreen.storyboard */; };
+		F784A46828578C9E008F5B0F /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F784A46728578C9E008F5B0F /* MyCollectionViewCell.swift */; };
+		F784A46A28578E92008F5B0F /* thai-cookbook.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F784A46928578E92008F5B0F /* thai-cookbook.pdf */; };
+		F784A46C28578E98008F5B0F /* italian-cookbook.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F784A46B28578E97008F5B0F /* italian-cookbook.pdf */; };
+		F784A46E28578E9E008F5B0F /* french-cookbook.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F784A46D28578E9E008F5B0F /* french-cookbook.pdf */; };
+		F784A47028578EA6008F5B0F /* Graphic-design.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F784A46F28578EA6008F5B0F /* Graphic-design.pdf */; };
+		F784A47228578EAD008F5B0F /* PhotoShop-book.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F784A47128578EAD008F5B0F /* PhotoShop-book.pdf */; };
+		F784A47428578EBE008F5B0F /* learning python fast.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F784A47328578EBE008F5B0F /* learning python fast.pdf */; };
+		F784A47628578ECC008F5B0F /* The Kite Runner.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F784A47528578ECC008F5B0F /* The Kite Runner.pdf */; };
+		F784A47828578ED1008F5B0F /* Catcher In the Rye.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F784A47728578ED1008F5B0F /* Catcher In the Rye.pdf */; };
+		F784A47A28578ED7008F5B0F /* The Great Gatsby.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F784A47928578ED7008F5B0F /* The Great Gatsby.pdf */; };
 		F7D6D8642853993D007B8EB7 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D6D8632853993D007B8EB7 /* BooksViewController.swift */; };
 		F7D6D86628539966007B8EB7 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D6D86528539966007B8EB7 /* PDFViewController.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +38,16 @@
 		70E9C74528532B9C00A12632 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70E9C74828532B9C00A12632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70E9C74A28532B9C00A12632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F784A46728578C9E008F5B0F /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		F784A46928578E92008F5B0F /* thai-cookbook.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "thai-cookbook.pdf"; path = "../../../../Downloads/thai-cookbook.pdf"; sourceTree = "<group>"; };
+		F784A46B28578E97008F5B0F /* italian-cookbook.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "italian-cookbook.pdf"; path = "../../../../Downloads/italian-cookbook.pdf"; sourceTree = "<group>"; };
+		F784A46D28578E9E008F5B0F /* french-cookbook.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "french-cookbook.pdf"; path = "../../../../Downloads/french-cookbook.pdf"; sourceTree = "<group>"; };
+		F784A46F28578EA6008F5B0F /* Graphic-design.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Graphic-design.pdf"; path = "../../../../Downloads/Graphic-design.pdf"; sourceTree = "<group>"; };
+		F784A47128578EAD008F5B0F /* PhotoShop-book.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "PhotoShop-book.pdf"; path = "../../../../Downloads/PhotoShop-book.pdf"; sourceTree = "<group>"; };
+		F784A47328578EBE008F5B0F /* learning python fast.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "learning python fast.pdf"; path = "../../../../Downloads/learning python fast.pdf"; sourceTree = "<group>"; };
+		F784A47528578ECC008F5B0F /* The Kite Runner.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "The Kite Runner.pdf"; path = "../../../../Downloads/The Kite Runner.pdf"; sourceTree = "<group>"; };
+		F784A47728578ED1008F5B0F /* Catcher In the Rye.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Catcher In the Rye.pdf"; path = "../../../../Downloads/Catcher In the Rye.pdf"; sourceTree = "<group>"; };
+		F784A47928578ED7008F5B0F /* The Great Gatsby.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "The Great Gatsby.pdf"; path = "../../../../Downloads/The Great Gatsby.pdf"; sourceTree = "<group>"; };
 		F7D6D8632853993D007B8EB7 /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		F7D6D86528539966007B8EB7 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,11 +86,14 @@
 				70E9C73928532B9A00A12632 /* AppDelegate.swift */,
 				70E9C73B28532B9A00A12632 /* SceneDelegate.swift */,
 				70E9C73D28532B9A00A12632 /* ViewController.swift */,
+				F7D6D8632853993D007B8EB7 /* BooksViewController.swift */,
+				F7D6D86528539966007B8EB7 /* PDFViewController.swift */,
 				70E9C73F28532B9A00A12632 /* Main.storyboard */,
 				70E9C74528532B9C00A12632 /* Assets.xcassets */,
 				70E9C74728532B9C00A12632 /* LaunchScreen.storyboard */,
 				70E9C74A28532B9C00A12632 /* Info.plist */,
 				70E9C74228532B9A00A12632 /* TakeItEasy2.xcdatamodeld */,
+				F784A46728578C9E008F5B0F /* MyCollectionViewCell.swift */,
 			);
 			path = TakeItEasy2;
 			sourceTree = "<group>";
@@ -78,8 +101,15 @@
 		F7D6D86228539929007B8EB7 /* Books */ = {
 			isa = PBXGroup;
 			children = (
-				F7D6D8632853993D007B8EB7 /* BooksViewController.swift */,
-				F7D6D86528539966007B8EB7 /* PDFViewController.swift */,
+				F784A46928578E92008F5B0F /* thai-cookbook.pdf */,
+				F784A46B28578E97008F5B0F /* italian-cookbook.pdf */,
+				F784A46D28578E9E008F5B0F /* french-cookbook.pdf */,
+				F784A46F28578EA6008F5B0F /* Graphic-design.pdf */,
+				F784A47128578EAD008F5B0F /* PhotoShop-book.pdf */,
+				F784A47328578EBE008F5B0F /* learning python fast.pdf */,
+				F784A47528578ECC008F5B0F /* The Kite Runner.pdf */,
+				F784A47728578ED1008F5B0F /* Catcher In the Rye.pdf */,
+				F784A47928578ED7008F5B0F /* The Great Gatsby.pdf */,
 			);
 			path = Books;
 			sourceTree = "<group>";
@@ -142,9 +172,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F784A47028578EA6008F5B0F /* Graphic-design.pdf in Resources */,
 				70E9C74928532B9C00A12632 /* LaunchScreen.storyboard in Resources */,
+				F784A47A28578ED7008F5B0F /* The Great Gatsby.pdf in Resources */,
+				F784A47828578ED1008F5B0F /* Catcher In the Rye.pdf in Resources */,
+				F784A46E28578E9E008F5B0F /* french-cookbook.pdf in Resources */,
+				F784A47628578ECC008F5B0F /* The Kite Runner.pdf in Resources */,
 				70E9C74628532B9C00A12632 /* Assets.xcassets in Resources */,
 				70E9C74128532B9A00A12632 /* Main.storyboard in Resources */,
+				F784A46C28578E98008F5B0F /* italian-cookbook.pdf in Resources */,
+				F784A47428578EBE008F5B0F /* learning python fast.pdf in Resources */,
+				F784A47228578EAD008F5B0F /* PhotoShop-book.pdf in Resources */,
+				F784A46A28578E92008F5B0F /* thai-cookbook.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7D6D8642853993D007B8EB7 /* BooksViewController.swift in Sources */,
+				F784A46828578C9E008F5B0F /* MyCollectionViewCell.swift in Sources */,
 				70E9C73E28532B9A00A12632 /* ViewController.swift in Sources */,
 				70E9C73A28532B9A00A12632 /* AppDelegate.swift in Sources */,
 				F7D6D86628539966007B8EB7 /* PDFViewController.swift in Sources */,
