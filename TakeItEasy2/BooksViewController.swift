@@ -9,7 +9,7 @@ import UIKit
 import PDFKit
 
 
-class BooksViewController: UIViewController, UICollectionViewDataSource, UISearchControllerDelegate,UISearchBarDelegate, UISearchResultsUpdating {
+class BooksViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate, UISearchControllerDelegate,UISearchBarDelegate, UISearchResultsUpdating {
     
     
     
@@ -153,6 +153,9 @@ class BooksViewController: UIViewController, UICollectionViewDataSource, UISearc
             cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: "cell1", for: indexPath) as! MyCollectionViewCell
             cell1.backgroundColor = .green
             cell1.nameA.text = GeneralBooks[indexPath.row]
+            cell1.layer.cornerRadius = 5.0
+            cell1.layer.masksToBounds = true
+            
             
             return cell1
             
@@ -162,6 +165,8 @@ class BooksViewController: UIViewController, UICollectionViewDataSource, UISearc
             cell2.backgroundColor = .blue
             cell2.nameB.text = technicalBooks[indexPath.row]
             cell2.backgroundView?.backgroundColor = .black
+            cell2.layer.cornerRadius = 5.0
+            cell2.layer.masksToBounds = true
             
             return cell2
             
@@ -170,6 +175,9 @@ class BooksViewController: UIViewController, UICollectionViewDataSource, UISearc
             var cell3 = collectionView.dequeueReusableCell(withReuseIdentifier: "cell3", for: indexPath) as! MyCollectionViewCell
             cell3.backgroundColor = .orange
             cell3.nameC.text = cookBooks[indexPath.row]
+            cell3.layer.cornerRadius = 5.0
+            cell3.layer.masksToBounds = true
+            
             
             return cell3
         
