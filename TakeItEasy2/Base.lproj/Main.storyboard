@@ -176,13 +176,81 @@
             </objects>
             <point key="canvasLocation" x="-17.39130434782609" y="178.79464285714286"/>
         </scene>
+        <!--Quiz View Controller-->
+        <scene sceneID="Ccw-89-VjO">
+            <objects>
+                <viewController id="Yv5-4z-UZ6" customClass="QuizViewController" customModule="TakeItEasy2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bJO-y0-oqZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5A7-4M-eVv">
+                                <rect key="frame" x="20" y="54" width="374" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="syY-nC-wGf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTI-FA-QPs">
+                                <rect key="frame" x="107" y="423" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="SAQ-EC-lIn"/>
+                                    <constraint firstAttribute="width" constant="200" id="jun-s0-vYu"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Start Quiz">
+                                    <color key="baseBackgroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="startQuiz:" destination="Yv5-4z-UZ6" eventType="touchUpInside" id="iXk-A0-sfL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Gcw-ru-pLj"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="kTI-FA-QPs" firstAttribute="centerX" secondItem="bJO-y0-oqZ" secondAttribute="centerX" id="FcN-xU-BBa"/>
+                            <constraint firstItem="kTI-FA-QPs" firstAttribute="centerY" secondItem="bJO-y0-oqZ" secondAttribute="centerY" id="Tvw-cA-Ql7"/>
+                            <constraint firstItem="5A7-4M-eVv" firstAttribute="leading" secondItem="Gcw-ru-pLj" secondAttribute="leading" constant="20" id="fxM-Ic-aAA"/>
+                            <constraint firstItem="Gcw-ru-pLj" firstAttribute="trailing" secondItem="5A7-4M-eVv" secondAttribute="trailing" constant="20" id="god-ns-d3r"/>
+                            <constraint firstItem="5A7-4M-eVv" firstAttribute="top" secondItem="Gcw-ru-pLj" secondAttribute="top" constant="10" id="iyI-XV-3kH"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="otZ-s0-B00" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="628" y="192"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="oVK-3z-5fQ">
+            <objects>
+                <viewController storyboardIdentifier="Game" id="9wc-ie-SUR" customClass="GameViewController" customModule="TakeItEasy2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aBR-mW-26n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="8yo-dL-eM7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nhf-Mf-lrd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1281" y="192"/>
+        </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

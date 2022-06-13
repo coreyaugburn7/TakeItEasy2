@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BEC0ACA2853DBD30030EC25 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEC0AC92853DBD30030EC25 /* SearchViewController.swift */; };
+		3BEC0AEC28578EBB0030EC25 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEC0AEB28578EBA0030EC25 /* QuizViewController.swift */; };
+		3BEC0AEE285791830030EC25 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEC0AED285791830030EC25 /* GameViewController.swift */; };
 		70E9C73A28532B9A00A12632 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E9C73928532B9A00A12632 /* AppDelegate.swift */; };
 		70E9C73C28532B9A00A12632 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E9C73B28532B9A00A12632 /* SceneDelegate.swift */; };
 		70E9C73E28532B9A00A12632 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E9C73D28532B9A00A12632 /* ViewController.swift */; };
@@ -22,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3BEC0AC92853DBD30030EC25 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		3BEC0AEB28578EBA0030EC25 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		3BEC0AED285791830030EC25 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		70E9C73628532B9A00A12632 /* TakeItEasy2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeItEasy2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70E9C73928532B9A00A12632 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70E9C73B28532B9A00A12632 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +85,9 @@
 				70E9C74228532B9A00A12632 /* TakeItEasy2.xcdatamodeld */,
 				70E9C757285373A300A12632 /* MusicViewController.swift */,
 				70E9C7592853785200A12632 /* MusicCollectionViewCell.swift */,
+				3BEC0AC92853DBD30030EC25 /* SearchViewController.swift */,
+				3BEC0AEB28578EBA0030EC25 /* QuizViewController.swift */,
+				3BEC0AED285791830030EC25 /* GameViewController.swift */,
 			);
 			path = TakeItEasy2;
 			sourceTree = "<group>";
@@ -168,7 +177,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				70E9C73E28532B9A00A12632 /* ViewController.swift in Sources */,
+				3BEC0ACA2853DBD30030EC25 /* SearchViewController.swift in Sources */,
 				70E9C758285373A300A12632 /* MusicViewController.swift in Sources */,
+				3BEC0AEC28578EBB0030EC25 /* QuizViewController.swift in Sources */,
+				3BEC0AEE285791830030EC25 /* GameViewController.swift in Sources */,
 				70E9C73A28532B9A00A12632 /* AppDelegate.swift in Sources */,
 				70E9C74428532B9A00A12632 /* TakeItEasy2.xcdatamodeld in Sources */,
 				70E9C75A2853785200A12632 /* MusicCollectionViewCell.swift in Sources */,
