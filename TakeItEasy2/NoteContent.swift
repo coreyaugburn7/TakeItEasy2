@@ -35,6 +35,7 @@ class NoteContent: UIViewController {
             isActive = false
             microphone.tintColor = UIColor.blue
             stopSpeechRecog()
+            body = content.text
         }
     }
     
