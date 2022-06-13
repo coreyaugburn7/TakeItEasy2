@@ -1,19 +1,23 @@
 //
-//  PDFViewController.swift
+//  ThePDFViewController.swift
 //  TakeItEasy2
 //
-//  Created by Liban Abdinur on 6/10/22.
+//  Created by Liban Abdinur on 6/13/22.
 //
 
 import UIKit
 import PDFKit
 
-class PDFViewController: UIViewController {
-    
-    var pdfName: String?
 
+
+class ThePDFViewController: UIViewController {
+
+    var pdfName: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
         
         let pdfView = PDFView(frame: view.bounds)
         
@@ -23,11 +27,8 @@ class PDFViewController: UIViewController {
         
         pdfView.document = PDFDocument(url: filePath!)
         
-        view.addSubview(pdfView)
-       
-    }
+        view.addSubview(pdfView)    }
     
-    
-   
+
 
 }

@@ -6,15 +6,22 @@
 //
 
 import UIKit
+import PDFKit
 
-class BooksViewController: UIViewController {
+
+class BooksViewController: UIViewController, UICollectionViewDataSource, UISearchControllerDelegate,UISearchBarDelegate, UISearchResultsUpdating {
     
     
     
+    @IBOutlet weak var SearchBar: UISearchBar!
+    
+    @IBOutlet weak var CollectionViewA: UICollectionView!
     
     
+    @IBOutlet weak var CollectionViewB: UICollectionView!
     
     
+    @IBOutlet weak var CollectionViewC: UICollectionView!
     
     
     
@@ -137,13 +144,13 @@ class BooksViewController: UIViewController {
         searchBarSearchButtonClicked(SearchBar, name:GeneralBooks)
         
         
-        var cell1 = MyCollectionViewCellsCollectionViewCell()
+        var cell1 = MyCollectionViewCell()
     
         
         if collectionView == self.CollectionViewA{
             
             searchBarSearchButtonClicked(SearchBar, name:GeneralBooks)
-            cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: "cell1", for: indexPath) as! MyCollectionViewCellsCollectionViewCell
+            cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: "cell1", for: indexPath) as! MyCollectionViewCell
             cell1.backgroundColor = .green
             cell1.nameA.text = GeneralBooks[indexPath.row]
             
@@ -151,7 +158,7 @@ class BooksViewController: UIViewController {
             
         }
         else if collectionView == self.CollectionViewB{
-            var cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: "cell2", for: indexPath) as! MyCollectionViewCellsCollectionViewCell
+            var cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: "cell2", for: indexPath) as! MyCollectionViewCell
             cell2.backgroundColor = .blue
             cell2.nameB.text = technicalBooks[indexPath.row]
             cell2.backgroundView?.backgroundColor = .black
@@ -160,7 +167,7 @@ class BooksViewController: UIViewController {
             
         }
         else  {
-            var cell3 = collectionView.dequeueReusableCell(withReuseIdentifier: "cell3", for: indexPath) as! MyCollectionViewCellsCollectionViewCell
+            var cell3 = collectionView.dequeueReusableCell(withReuseIdentifier: "cell3", for: indexPath) as! MyCollectionViewCell
             cell3.backgroundColor = .orange
             cell3.nameC.text = cookBooks[indexPath.row]
             
@@ -182,20 +189,20 @@ class BooksViewController: UIViewController {
             
             if collectionView == self.CollectionViewA{
                 let storyObject = UIStoryboard(name: "Main", bundle: nil)
-                let pdfScreenVC = storyObject.instantiateViewController(withIdentifier: "pdfscreen") as! PDFViewController
+                let pdfScreenVC = storyObject.instantiateViewController(withIdentifier: "pdfscreen") as! ThePDFViewController
                 pdfScreenVC.pdfName = GeneralBooks[indexPath.row]
                 present(pdfScreenVC, animated: true, completion: nil)
                 
             }else if collectionView == self.CollectionViewB{
                 
                 let storyObject1 = UIStoryboard(name: "Main", bundle: nil)
-                let pdfScreenVC1 = storyObject1.instantiateViewController(withIdentifier: "pdfscreen") as! PDFViewController
+                let pdfScreenVC1 = storyObject1.instantiateViewController(withIdentifier: "pdfscreen") as! ThePDFViewController
                 pdfScreenVC1.pdfName = technicalBooks[indexPath.row]
                 present(pdfScreenVC1, animated: true, completion: nil)
                 
             }else if collectionView == self.CollectionViewC{
                 let storyObject2 = UIStoryboard(name: "Main", bundle: nil)
-                let pdfScreenVC2 = storyObject2.instantiateViewController(withIdentifier: "pdfscreen") as! PDFViewController
+                let pdfScreenVC2 = storyObject2.instantiateViewController(withIdentifier: "pdfscreen") as! ThePDFViewController
                 pdfScreenVC2.pdfName = cookBooks[indexPath.row]
                 present(pdfScreenVC2, animated: true, completion: nil)            }
             
@@ -204,20 +211,20 @@ class BooksViewController: UIViewController {
             
             if collectionView == self.CollectionViewA{
                 let storyObject = UIStoryboard(name: "Main", bundle: nil)
-                let pdfScreenVC = storyObject.instantiateViewController(withIdentifier: "pdfscreen") as! PDFViewController
+                let pdfScreenVC = storyObject.instantiateViewController(withIdentifier: "pdfscreen") as! ThePDFViewController
                 pdfScreenVC.pdfName = GeneralBooks[indexPath.row]
                 present(pdfScreenVC, animated: true, completion: nil)
                 
             }else if collectionView == self.CollectionViewB{
                 
                 let storyObject1 = UIStoryboard(name: "Main", bundle: nil)
-                let pdfScreenVC1 = storyObject1.instantiateViewController(withIdentifier: "pdfscreen") as! PDFViewController
+                let pdfScreenVC1 = storyObject1.instantiateViewController(withIdentifier: "pdfscreen") as! ThePDFViewController
                 pdfScreenVC1.pdfName = technicalBooks[indexPath.row]
                 present(pdfScreenVC1, animated: true, completion: nil)
                 
             }else if collectionView == self.CollectionViewC{
                 let storyObject2 = UIStoryboard(name: "Main", bundle: nil)
-                let pdfScreenVC2 = storyObject2.instantiateViewController(withIdentifier: "pdfscreen") as! PDFViewController
+                let pdfScreenVC2 = storyObject2.instantiateViewController(withIdentifier: "pdfscreen") as! ThePDFViewController
                 pdfScreenVC2.pdfName = cookBooks[indexPath.row]
                 present(pdfScreenVC2, animated: true, completion: nil)
             }
@@ -226,20 +233,20 @@ class BooksViewController: UIViewController {
                 
                 if collectionView == self.CollectionViewA{
                     let storyObject = UIStoryboard(name: "Main", bundle: nil)
-                    let pdfScreenVC = storyObject.instantiateViewController(withIdentifier: "pdfscreen") as! PDFViewController
+                    let pdfScreenVC = storyObject.instantiateViewController(withIdentifier: "pdfscreen") as! ThePDFViewController
                     pdfScreenVC.pdfName = GeneralBooks[indexPath.row]
                     present(pdfScreenVC, animated: true, completion: nil)
                     
                 }else if collectionView == self.CollectionViewB{
                     
                     let storyObject1 = UIStoryboard(name: "Main", bundle: nil)
-                    let pdfScreenVC1 = storyObject1.instantiateViewController(withIdentifier: "pdfscreen") as! PDFViewController
+                    let pdfScreenVC1 = storyObject1.instantiateViewController(withIdentifier: "pdfscreen") as! ThePDFViewController
                     pdfScreenVC1.pdfName = technicalBooks[indexPath.row]
                     present(pdfScreenVC1, animated: true, completion: nil)
                     
                 }else if collectionView == self.CollectionViewC{
                     let storyObject2 = UIStoryboard(name: "Main", bundle: nil)
-                    let pdfScreenVC2 = storyObject2.instantiateViewController(withIdentifier: "pdfscreen") as! PDFViewController
+                    let pdfScreenVC2 = storyObject2.instantiateViewController(withIdentifier: "pdfscreen") as! ThePDFViewController
                     pdfScreenVC2.pdfName = cookBooks[indexPath.row]
                     present(pdfScreenVC2, animated: true, completion: nil)
                 }
@@ -247,20 +254,20 @@ class BooksViewController: UIViewController {
         case 3:
             if collectionView == self.CollectionViewA{
                 let storyObject = UIStoryboard(name: "Main", bundle: nil)
-                let pdfScreenVC = storyObject.instantiateViewController(withIdentifier: "pdfscreen") as! PDFViewController
+                let pdfScreenVC = storyObject.instantiateViewController(withIdentifier: "pdfscreen") as! ThePDFViewController
                 pdfScreenVC.pdfName = GeneralBooks[indexPath.row]
                 present(pdfScreenVC, animated: true, completion: nil)
                 
             }else if collectionView == self.CollectionViewB{
                 
                 let storyObject1 = UIStoryboard(name: "Main", bundle: nil)
-                let pdfScreenVC1 = storyObject1.instantiateViewController(withIdentifier: "pdfscreen") as! PDFViewController
+                let pdfScreenVC1 = storyObject1.instantiateViewController(withIdentifier: "pdfscreen") as! ThePDFViewController
                 pdfScreenVC1.pdfName = technicalBooks[indexPath.row]
                 present(pdfScreenVC1, animated: true, completion: nil)
                 
             }else if collectionView == self.CollectionViewC{
                 let storyObject2 = UIStoryboard(name: "Main", bundle: nil)
-                let pdfScreenVC2 = storyObject2.instantiateViewController(withIdentifier: "pdfscreen") as! PDFViewController
+                let pdfScreenVC2 = storyObject2.instantiateViewController(withIdentifier: "pdfscreen") as! ThePDFViewController
                 pdfScreenVC2.pdfName = cookBooks[indexPath.row]
                 present(pdfScreenVC2, animated: true, completion: nil)
             }

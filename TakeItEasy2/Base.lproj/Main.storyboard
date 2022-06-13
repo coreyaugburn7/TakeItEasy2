@@ -131,19 +131,30 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="VPA-vG-fpP"/>
                                 </connections>
                             </collectionView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PfM-7k-nCB">
+                                <rect key="frame" x="0.0" y="117" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                     </view>
+                    <connections>
+                        <outlet property="CollectionViewA" destination="Fth-Qa-I3z" id="PEw-hu-NKy"/>
+                        <outlet property="CollectionViewB" destination="HkZ-Bf-NDg" id="xUD-K9-j4w"/>
+                        <outlet property="CollectionViewC" destination="HJd-mY-L8v" id="TVA-qM-GYn"/>
+                        <outlet property="SearchBar" destination="PfM-7k-nCB" id="nNT-BC-DwT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
+            <point key="canvasLocation" x="-213" y="70"/>
         </scene>
-        <!--View Controller-->
+        <!--ThePDF View Controller-->
         <scene sceneID="0kh-v7-UlK">
             <objects>
-                <viewController id="k3e-ay-OJC" customClass="ViewController" customModule="TakeItEasy2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pdfscreen" id="k3e-ay-OJC" customClass="ThePDFViewController" customModule="TakeItEasy2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gHW-6Q-Ljm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,6 +165,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Lg-N3-cfj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="765" y="98"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Bqe-aQ-d9N">
+            <objects>
+                <viewController id="4NZ-2N-TMA" customClass="ViewController" customModule="TakeItEasy2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5P8-SC-U6T">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="nnY-1d-Z3C"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yge-99-UAl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1536" y="98"/>
         </scene>
     </scenes>
     <resources>
