@@ -14,12 +14,12 @@ class NoteContent: UIViewController {
     var body = ""
     var hold = ""
     
-    let AudioEngine = AVAudioEngine()
+    let audioEngine = AVAudioEngine()
     let speechRecog = SFSpeechRecognizer()
     let bufferRecogReq = SFSpeechAudioBufferRecognitionRequest()
     var recogTask: SFSpeechRecognitionTask!
-    var isStart = false
     
+    var isStart = false
     var isActive = false
     
     @IBOutlet weak var microphone: UIButton!
@@ -52,14 +52,14 @@ class NoteContent: UIViewController {
     }
     
     func startSpeechRecog(){
-        let inputN = AudioEngine.inputNode
+        let inputN = audioEngine.inputNode
         let recordF = inputN.outputFormat(forBus: 0)
-        inputN.installTap(onBus: 0, bufferSize: 1024, format: recordF){
+        inputN.installTap(onBus: 0, bufferSize: 2048, format: recordF){
             buffer, _ in self.bufferRecogReq.append(buffer)
         }
-        AudioEngine.prepare()
+        audioEngine.prepare()
         do{
-            try AudioEngine.start()
+            try audioEngine.start()
         }
         catch{
             print("error")
@@ -75,7 +75,7 @@ class NoteContent: UIViewController {
         })
     }
     func stopSpeechRecog(){
-        
+        audioEngine.stop()
         recogTask.finish()
         recogTask.cancel()
         recogTask = nil
