@@ -12,6 +12,7 @@ class NoteContent: UIViewController {
 
     var header = ""
     var body = ""
+    var hold = ""
     
     let AudioEngine = AVAudioEngine()
     let speechRecog = SFSpeechRecognizer()
@@ -27,6 +28,7 @@ class NoteContent: UIViewController {
     
     @IBAction func mic(_ sender: Any) {
         if isActive == false{
+            body = content.text
             isActive = true
             microphone.tintColor = UIColor.red
             startSpeechRecog()
@@ -69,7 +71,7 @@ class NoteContent: UIViewController {
             }
             
             let msg = resp?.bestTranscription.formattedString
-            self.content.text.append(msg!)
+            self.content.text = self.body + msg!
         })
     }
     func stopSpeechRecog(){
