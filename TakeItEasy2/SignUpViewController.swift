@@ -167,25 +167,24 @@ func didRegisterAccountNewUser(username: String) -> Bool {
         var validation = false
         if !validUsername(username: username) {
             self.errorMessage.text = "Enter a valid email."
+            print("first")
         }
-        else {
-            if !passwordLength(password: password) {
+        else if !passwordLength(password: password) {
                 self.errorMessage.text = "Enter a password with at least 8 characters"
+                print("second")
             }
-            else {
-                if !passwordStrength(password: password) {
-                    self.errorMessage.text = "Need 1 uppercase, 1 lowercase, 1 number, 1 special character."
+            else if !passwordStrength(password: password) {
+                    //self.errorMessage.text = "Need 1 uppercase, 1 lowercase, 1 number, 1 special character."
+                    print("third")
                 }
-                else {
-                    if !passwordMatch(password: password, repassword: repassword) {
+                else if !passwordMatch(password: password, repassword: repassword) {
                         self.errorMessage.text = "Passwords do not match."
+                        print("fourth")
                     }
                     else {
                         validation = true
+                        print("nice")
                     }
-                }
-            }
-        }
         return validation
     }
     
@@ -205,16 +204,16 @@ func didRegisterAccountNewUser(username: String) -> Bool {
     func passwordStrength(password: String) -> Bool {
         var strPassword = false
         
-        let capitalPassword = regexValidation(value: password, regex: ".[A-Z]+.")
-        let lowerPassword = regexValidation(value: password, regex: ".[a-z]+.")
-        let numberPassword = regexValidation(value: password, regex: ".[0-9]+.")
-        let specialPassword = regexValidation(value: password, regex: ".[!@#$&]+.*")
+        let capitalPassword = regexValidation(value: password, regex: ".*[A-Z]+.*")
+        let lowerPassword = regexValidation(value: password, regex: ".*[a-z]+.*")
+        let numberPassword = regexValidation(value: password, regex: ".*[0-9]+.*")
+        let specialPassword = regexValidation(value: password, regex: ".*[!@#$&]+.*")
         
-        if capitalPassword && lowerPassword && numberPassword && specialPassword {
+        if capitalPassword && lowerPassword && numberPassword && specialPassword  {
             strPassword = true
         }
         else {
-            self.errorMessage.text = "Need 1 uppercase, 1 lowercase, 1 number, 1 special character."
+            self.errorMessage.text = "Need 1 uppercase, lowercase, number, special character."
         }
         return strPassword
     }
@@ -257,20 +256,18 @@ func signUp() {
         
     if !(didRegisterAccountValidation(input: name) && didRegisterAccountValidation(input: username) && didRegisterAccountValidation(input: password) && didRegisterAccountValidation(input: reEnterPassword) && didRegisterAccountValidation(input: mobile)) {
         self.errorMessage.text = "Please input credentials."
-    } else {
-        if !regexCredentials(username: username, password: password, repassword: reEnterPassword) {
-            self.errorMessage.text = "HELP"
+        
+    } else if !regexCredentials(username: username, password: password, repassword: reEnterPassword) {
+           // self.errorMessage.text = "HELP"
         }
-        else {
-            if DBHelperUser.dbHelperUser.isUserRegistered(username: username) {
+    
+        else if DBHelperUser.dbHelperUser.isUserRegistered(username: username) {
                 self.errorMessage.text = "You registered already, go to log in page."
+            
             } else {
                 DBHelperUser.dbHelperUser.createUser(nameValue: name, emailValue: username, passwordValue: password, reEnterPasswordValue: reEnterPassword, mobileValue: mobile)
                 self.errorMessage.text = "Registered succesfully! Please log in."
             }
-        }
-        
-    }
 }
     
 
