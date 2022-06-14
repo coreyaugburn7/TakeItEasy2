@@ -69,8 +69,7 @@ class NoteContent: UIViewController {
             }
             
             let msg = resp?.bestTranscription.formattedString
-            print(msg)
-            self.content.text = msg
+            self.content.text.append(msg!)
         })
     }
     func stopSpeechRecog(){
@@ -78,7 +77,6 @@ class NoteContent: UIViewController {
         recogTask.finish()
         recogTask.cancel()
         recogTask = nil
-        body = self.content.text
     }
 
 }
