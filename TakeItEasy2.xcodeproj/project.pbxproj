@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70A256D32857D0180000A0ED /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A256D22857D0180000A0ED /* NewViewController.swift */; };
+		70A256D52857D04F0000A0ED /* NewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A256D42857D04F0000A0ED /* NewCollectionViewCell.swift */; };
+		70A256D72857DE060000A0ED /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A256D62857DE060000A0ED /* SwiftUIView.swift */; };
+		70A256D92857E8970000A0ED /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A256D82857E8970000A0ED /* SwiftViewController.swift */; };
+		70A256DB285812E40000A0ED /* SwiftUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A256DA285812E40000A0ED /* SwiftUIViewController.swift */; };
 		70E9C73A28532B9A00A12632 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E9C73928532B9A00A12632 /* AppDelegate.swift */; };
 		70E9C73C28532B9A00A12632 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E9C73B28532B9A00A12632 /* SceneDelegate.swift */; };
 		70E9C73E28532B9A00A12632 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E9C73D28532B9A00A12632 /* ViewController.swift */; };
@@ -22,6 +27,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		70A256D22857D0180000A0ED /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
+		70A256D42857D04F0000A0ED /* NewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCollectionViewCell.swift; sourceTree = "<group>"; };
+		70A256D62857DE060000A0ED /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		70A256D82857E8970000A0ED /* SwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftViewController.swift; sourceTree = "<group>"; };
+		70A256DA285812E40000A0ED /* SwiftUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewController.swift; sourceTree = "<group>"; };
 		70E9C73628532B9A00A12632 /* TakeItEasy2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeItEasy2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70E9C73928532B9A00A12632 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70E9C73B28532B9A00A12632 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +89,11 @@
 				70E9C74228532B9A00A12632 /* TakeItEasy2.xcdatamodeld */,
 				70E9C757285373A300A12632 /* MusicViewController.swift */,
 				70E9C7592853785200A12632 /* MusicCollectionViewCell.swift */,
+				70A256D22857D0180000A0ED /* NewViewController.swift */,
+				70A256D42857D04F0000A0ED /* NewCollectionViewCell.swift */,
+				70A256D62857DE060000A0ED /* SwiftUIView.swift */,
+				70A256D82857E8970000A0ED /* SwiftViewController.swift */,
+				70A256DA285812E40000A0ED /* SwiftUIViewController.swift */,
 			);
 			path = TakeItEasy2;
 			sourceTree = "<group>";
@@ -169,10 +184,15 @@
 			files = (
 				70E9C73E28532B9A00A12632 /* ViewController.swift in Sources */,
 				70E9C758285373A300A12632 /* MusicViewController.swift in Sources */,
+				70A256D72857DE060000A0ED /* SwiftUIView.swift in Sources */,
+				70A256D32857D0180000A0ED /* NewViewController.swift in Sources */,
 				70E9C73A28532B9A00A12632 /* AppDelegate.swift in Sources */,
 				70E9C74428532B9A00A12632 /* TakeItEasy2.xcdatamodeld in Sources */,
+				70A256DB285812E40000A0ED /* SwiftUIViewController.swift in Sources */,
 				70E9C75A2853785200A12632 /* MusicCollectionViewCell.swift in Sources */,
 				70E9C73C28532B9A00A12632 /* SceneDelegate.swift in Sources */,
+				70A256D92857E8970000A0ED /* SwiftViewController.swift in Sources */,
+				70A256D52857D04F0000A0ED /* NewCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

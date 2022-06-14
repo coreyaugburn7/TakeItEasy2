@@ -7,6 +7,8 @@
 
 import UIKit
 import AVFoundation
+import Foundation
+import WebKit
 
 class MusicViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate, UICollectionViewDelegateFlowLayout{
     
@@ -43,6 +45,61 @@ class MusicViewController: UIViewController, UICollectionViewDelegate, UICollect
     var dataImg = ["Casemissingyou", "love", "Green_Day"]
     
     var dataText = ["Case", "love", "Green Day"]
+    
+    var songName = ["Missing You", "Been Around the World", "Time of Your Life"]
+    
+    
+    
+//    "version": "1.0", "type": "rich", "cache_age": 86400, "provider_name": "Deezer", "provider_url": "https://www.deezer.com/", "entity": "album", "id": 302127, "url": "https://www.deezer.com/fr/album/302127", "author_name": "Daft Punk", "title": "Discovery", "thumbnail_url": "https://cdns-images.dzcdn.net/images/cover/2e018122cb56986277102d2041a592c8/1000x1000.jpg", "thumbnail_width": 1000, "thumbnail_height": 1000, "width": 700, "height": 300, "html": "<iframe id="deezer-widget" src="https://widget.deezer.com/widget/dark/album/302127?app_id=457142&autoplay=false&radius=true&tracklist=true/" width="700" height="300" allowtransparency="true" allowfullscreen="true" allow="encrypted-media"></iframe>" }
+    
+//
+//    let headers = [
+//        "X-RapidAPI-Key": "bf9c52f674mshdb1d8139e4bef5cp1332c9jsneea4450ad4c7",
+//        "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com"
+//    ]
+//
+//    let request = NSMutableURLRequest(url: NSURL(string: "https://deezerdevs-deezer.p.rapidapi.com/infos")! as URL,
+//                                            cachePolicy: .useProtocolCachePolicy,
+//                                        timeoutInterval: 10.0)
+//    request.httpMethod = "GET"
+//    request.allHTTPHeaderFields = headers
+//
+//    let session = URLSession.shared
+//    let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+//        if (error != nil) {
+//            print(error)
+//        } else {
+//            let httpResponse = response as? HTTPURLResponse
+//            print(httpResponse)
+//        }
+//    })
+//
+//    dataTask.resume()
+    
+    
+    var results = [Result]()
+    
+    struct Result : Codable {
+        
+        let trackId: Int
+        let trackName: String
+        let collectionName: String
+        
+    }
+
+    struct Response: Codable {
+        let result: [Result]
+    }
+    
+    
+//    List(results,id:\.trackId){ item in
+//        
+//        Text(item.trackName)
+//        Text(item.collectionName)
+//    }
+//    
+    
+    
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -124,6 +181,7 @@ class MusicViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBAction func playBtn(_ sender: Any) {
         
         for song in dataText{
+            print(index, ":", song)
             if song.lowercased() == searchMusic.text!.lowercased(){
                 audioPlayer?.prepareToPlay()
                 timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
@@ -171,9 +229,11 @@ class MusicViewController: UIViewController, UICollectionViewDelegate, UICollect
                         return
                 }
             progressView.setProgress(Float(myTime)*Float(1/total),animated:true)
-                                }
-
+        }else{
+            
         }
+
+    }
         
         
         
@@ -201,8 +261,7 @@ class MusicViewController: UIViewController, UICollectionViewDelegate, UICollect
             filtered = true
         }
     
-    func secToMin(seconds: Int) ->(Int, Int)
-                        {
+    func secToMin(seconds: Int) ->(Int, Int){
                             return (((seconds % 3600) / 60),((seconds % 3600) % 60))
                         }
 }
