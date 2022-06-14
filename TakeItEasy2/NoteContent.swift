@@ -80,5 +80,4 @@ class NoteContent: UIViewController {
         recogTask.cancel()
         recogTask = nil
     }
-
 }
