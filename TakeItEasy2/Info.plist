@@ -16,10 +16,14 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>Main</string>
+					<string>Note</string>
 				</dict>
 			</array>
 		</dict>
 	</dict>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Must give</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Must give</string>
 </dict>
 </plist>
