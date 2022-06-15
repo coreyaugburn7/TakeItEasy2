@@ -20,6 +20,11 @@
 		84C340FE2854359D00E6B6AA /* TakeItEasy2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84C340FC2854359D00E6B6AA /* TakeItEasy2.xcdatamodeld */; };
 		84C34101285441BB00E6B6AA /* Journal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C340FF285441BB00E6B6AA /* Journal+CoreDataClass.swift */; };
 		84C34102285441BB00E6B6AA /* Journal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C34100285441BB00E6B6AA /* Journal+CoreDataProperties.swift */; };
+		70E9C752285372B600A12632 /* Green Day.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 70E9C751285372B600A12632 /* Green Day.mp3 */; };
+		70E9C754285372C700A12632 /* love.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 70E9C753285372C700A12632 /* love.mp3 */; };
+		70E9C7562853730000A12632 /* Case.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 70E9C7552853730000A12632 /* Case.mp3 */; };
+		70E9C758285373A300A12632 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E9C757285373A300A12632 /* MusicViewController.swift */; };
+		70E9C75A2853785200A12632 /* MusicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E9C7592853785200A12632 /* MusicCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,11 @@
 		84C340FD2854359D00E6B6AA /* TakeItEasy2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TakeItEasy2.xcdatamodel; sourceTree = "<group>"; };
 		84C340FF285441BB00E6B6AA /* Journal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+CoreDataClass.swift"; sourceTree = "<group>"; };
 		84C34100285441BB00E6B6AA /* Journal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		70E9C751285372B600A12632 /* Green Day.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Green Day.mp3"; sourceTree = "<group>"; };
+		70E9C753285372C700A12632 /* love.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = love.mp3; sourceTree = "<group>"; };
+		70E9C7552853730000A12632 /* Case.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Case.mp3; sourceTree = "<group>"; };
+		70E9C757285373A300A12632 /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
+		70E9C7592853785200A12632 /* MusicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +82,7 @@
 		70E9C73828532B9A00A12632 /* TakeItEasy2 */ = {
 			isa = PBXGroup;
 			children = (
+				70E9C7502853716100A12632 /* Music */,
 				70E9C73928532B9A00A12632 /* AppDelegate.swift */,
 				84C340BC2853DDA800E6B6AA /* Main.storyboard */,
 				84C340AE2853DA2600E6B6AA /* DbHandler.swift */,
@@ -83,9 +94,21 @@
 				70E9C74528532B9C00A12632 /* Assets.xcassets */,
 				70E9C74728532B9C00A12632 /* LaunchScreen.storyboard */,
 				70E9C74A28532B9C00A12632 /* Info.plist */,
-				84C340FC2854359D00E6B6AA /* TakeItEasy2.xcdatamodeld */,
+				70E9C74228532B9A00A12632 /* TakeItEasy2.xcdatamodeld */,
+				70E9C757285373A300A12632 /* MusicViewController.swift */,
+				70E9C7592853785200A12632 /* MusicCollectionViewCell.swift */,
 			);
 			path = TakeItEasy2;
+			sourceTree = "<group>";
+		};
+		70E9C7502853716100A12632 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				70E9C751285372B600A12632 /* Green Day.mp3 */,
+				70E9C7552853730000A12632 /* Case.mp3 */,
+				70E9C753285372C700A12632 /* love.mp3 */,
+			);
+			path = Music;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,10 +169,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70E9C7562853730000A12632 /* Case.mp3 in Resources */,
 				70E9C74928532B9C00A12632 /* LaunchScreen.storyboard in Resources */,
+				70E9C754285372C700A12632 /* love.mp3 in Resources */,
 				70E9C74628532B9C00A12632 /* Assets.xcassets in Resources */,
 				84C340BB2853DB7800E6B6AA /* Note.storyboard in Resources */,
 				84C340BD2853DDA800E6B6AA /* Main.storyboard in Resources */,
+				70E9C752285372B600A12632 /* Green Day.mp3 in Resources */,
+				70E9C74128532B9A00A12632 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +195,10 @@
 				84C34101285441BB00E6B6AA /* Journal+CoreDataClass.swift in Sources */,
 				84C340B32853DA4C00E6B6AA /* NoteContent.swift in Sources */,
 				84C34102285441BB00E6B6AA /* Journal+CoreDataProperties.swift in Sources */,
+				70E9C758285373A300A12632 /* MusicViewController.swift in Sources */,
+				70E9C73A28532B9A00A12632 /* AppDelegate.swift in Sources */,
+				70E9C74428532B9A00A12632 /* TakeItEasy2.xcdatamodeld in Sources */,
+				70E9C75A2853785200A12632 /* MusicCollectionViewCell.swift in Sources */,
 				70E9C73C28532B9A00A12632 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
