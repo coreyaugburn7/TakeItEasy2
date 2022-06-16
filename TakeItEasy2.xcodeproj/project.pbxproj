@@ -14,6 +14,7 @@
 		70E9C74428532B9A00A12632 /* TakeItEasy2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70E9C74228532B9A00A12632 /* TakeItEasy2.xcdatamodeld */; };
 		70E9C74628532B9C00A12632 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70E9C74528532B9C00A12632 /* Assets.xcassets */; };
 		70E9C74928532B9C00A12632 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70E9C74728532B9C00A12632 /* LaunchScreen.storyboard */; };
+		8438DC65285AA8D300A67F49 /* UsersName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8438DC64285AA8D300A67F49 /* UsersName.swift */; };
 		84689ECA28539C960014FC7F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84689EC928539C960014FC7F /* SignInViewController.swift */; };
 		84689ECC28539CA60014FC7F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84689ECB28539CA60014FC7F /* SignUpViewController.swift */; };
 		84689ECE28539CB30014FC7F /* DBHelperUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84689ECD28539CB30014FC7F /* DBHelperUser.swift */; };
@@ -31,6 +32,7 @@
 		70E9C74528532B9C00A12632 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70E9C74828532B9C00A12632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70E9C74A28532B9C00A12632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8438DC64285AA8D300A67F49 /* UsersName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersName.swift; sourceTree = "<group>"; };
 		84689EC928539C960014FC7F /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		84689ECB28539CA60014FC7F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		84689ECD28539CB30014FC7F /* DBHelperUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelperUser.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				70E9C74A28532B9C00A12632 /* Info.plist */,
 				84689EC928539C960014FC7F /* SignInViewController.swift */,
 				84689ECB28539CA60014FC7F /* SignUpViewController.swift */,
+				8438DC64285AA8D300A67F49 /* UsersName.swift */,
 				84689ECD28539CB30014FC7F /* DBHelperUser.swift */,
 				70E9C74228532B9A00A12632 /* TakeItEasy2.xcdatamodeld */,
 			);
@@ -161,6 +164,7 @@
 				70E9C73E28532B9A00A12632 /* ViewController.swift in Sources */,
 				70E9C73A28532B9A00A12632 /* AppDelegate.swift in Sources */,
 				70E9C74428532B9A00A12632 /* TakeItEasy2.xcdatamodeld in Sources */,
+				8438DC65285AA8D300A67F49 /* UsersName.swift in Sources */,
 				84689ECA28539C960014FC7F /* SignInViewController.swift in Sources */,
 				84689ED128539D930014FC7F /* User+CoreDataClass.swift in Sources */,
 				70E9C73C28532B9A00A12632 /* SceneDelegate.swift in Sources */,

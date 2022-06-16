@@ -10,14 +10,21 @@ import CoreData
 
 class SignInViewController: UIViewController {
 
+    // All connections used for SignInViewController
 
     @IBOutlet weak var enterEmailTextField: UITextField!
     @IBOutlet weak var enterPasswordTextField: UITextField!
     @IBOutlet weak var errorMessage: UILabel!
     @IBOutlet weak var remSwitch: UISwitch!
     
+    // Various variables for usage
+    
     let userDef = UserDefaults.standard
     let switchStatus = UserDefaults.standard
+    
+    
+    // This function checks if rememberMe switch is on
+    // Saves the data and calls it to the email and password text fields
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,10 +48,11 @@ class SignInViewController: UIViewController {
         }else{
             remSwitch.setOn(false, animated: true)
         }
-
-
-        // Do any additional setup after loading the view.
     }
+    
+    
+    // Action function used for keychain with the rememberMe switch
+    // This checks if the switch is on to save the credentials or not for the user
     
     @IBAction func rememberMe(_ sender: Any) {
         if(remSwitch.isOn ==  true){
@@ -68,6 +76,10 @@ class SignInViewController: UIViewController {
               }
     }
     
+    
+    // This action function checks if the username and password	are correct
+    // If correct, segue to TakeItEasy interface :)
+    
     @IBAction func buttonSignIn(_ sender: Any) {
         //1. validate username and password inputs
         let emailTextField = enterEmailTextField.text!
@@ -87,7 +99,7 @@ class SignInViewController: UIViewController {
                 errorMessage.text = "Please sign in first"
             }
             //check if password is correct
-            //let correctPassword = DBHelperUser.dbHelperUser.getOne(username: usernameTextField!).password
+            //let correctPassword = DBHelperUser.dbHelperUser.getOne(username: emailTextField).password
             let user = DBHelperUser.dbHelperUser.getOne(username: emailTextField)
             let correctPassword = user.password
             if passwordTextField == correctPassword {
@@ -105,41 +117,5 @@ class SignInViewController: UIViewController {
         } else {
             errorMessage.text = "Please input username/password."
         }
-        //2. save password to keychain if remember me is on
-//        func savePassword() {
-//            if rememberMe.isOn {
-//                //save password to keychain
-//
-//                let request : [String : Any] = [kSecClass as String : kSecClassGenericPassword, kSecAttrAccount as String : enterEmailTextField.text!]
-//
-//                let attributeUsername : [String : Any] = [kSecAttrAccount as String : enterEmailTextField!]
-//
-//                let attributePassword : [String : Any] = [kSecValueData as String : enterPasswordTextField.text!.data(using: .utf8)!]
-//
-//                if SecItemUpdate(request as CFDictionary, attributePassword as CFDictionary) == noErr && SecItemUpdate(request as CFDictionary, attributeUsername as CFDictionary) == noErr {
-//                    print("User data saved in keychain.")
-//                } else {
-//                    print("Error.")
-//                }
-//                //save this user to userDefaults
-//                let userDefaults = UserDefaults.standard
-//                userDefaults.set(enterEmailTextField.text!, forKey: "UserRemembered")
-//            }
-//            if rememberMe.isOn == false {
-//                let request : [String : Any] = [kSecClass as String : kSecClassGenericPassword, kSecAttrAccount as String : enterEmailTextField.text!]
-//
-//                if SecItemDelete(request as CFDictionary) == noErr {
-//                    print("User data deleted.")
-//                }
-//                else {
-//                    print("Error.")
-//                }
-//            }
-//
-//        }
     }
-        
-    }
-
-    
-
+}

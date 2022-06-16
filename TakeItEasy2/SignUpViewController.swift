@@ -11,9 +11,9 @@ import CoreData
 
 class SignUpViewController: UIViewController {
 
+    // All connections used for SignUpViewController
     
     @IBOutlet weak var errorMessage: UILabel!
-    
     @IBOutlet weak var enterNameTextField: UITextField!
     @IBOutlet weak var enterEmailTextField: UITextField!
     @IBOutlet weak var enterPasswordTextField: UITextField!
@@ -21,6 +21,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var mobileNumberTextField: UITextField!
     @IBOutlet weak var remSwitch: UISwitch!
     @IBOutlet weak var SignIn: UIButton!
+    
+    // Various variables for usage
     
     var pin = 1234
     var errorMsg = ""
@@ -32,13 +34,10 @@ class SignUpViewController: UIViewController {
         
     }
     
-    func test() {
-       let b = regexValidation(value: enterEmailTextField.text!, regex: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
-        if !b {
-            self.errorMessage.text = "HELP"
-        }
-    }
-
+    
+    // Action function used for keychain with the rememberMe switch
+    // This checks if the switch is on to save the credentials or not for the user
+    
     @IBAction func rememberMe(_ sender: Any) {
         if(remSwitch.isOn ==  true){
             switchStatus.set(true, forKey: "switch")
@@ -62,13 +61,14 @@ class SignUpViewController: UIViewController {
           }
     
     
-    @IBAction func getOPT(_ sender: Any) {
+    // This action function sends a push notification after clicking the getOTP button
+    
+    @IBAction func getOTP(_ sender: Any) {
         let dialogMessage = UIAlertController(title: "Alert", message: "Your code is \(pin)", preferredStyle: .alert)
                 
                 // Create Confirm button with action handler
                 let confirm = UIAlertAction(title: "Confirm", style: .default, handler: { (action) -> Void in
                     print("Confirm button tapped")
-                    //self.SignIn.isHidden = false
                     self.displaySecondPush()
                 })
                 
@@ -77,13 +77,17 @@ class SignUpViewController: UIViewController {
                     print("Cancel button tapped")
                 }
                 
-                //Add OK and Cancel button to dialog message
+                // Add Confrim and Cancel button to dialog message
                 dialogMessage.addAction(confirm)
                 dialogMessage.addAction(cancel)
                 
                 // Present dialog message to user
                 self.present(dialogMessage, animated: true, completion: nil)
             }
+    
+    
+    // This function displays after confirming the first push notification
+    // This checks that the pin is correct before allowing the sign up button to appear
     
     func displaySecondPush() {
         let dialogMessage = UIAlertController(title: "Confirm", message: "Please Enter your code", preferredStyle: .alert)
@@ -115,7 +119,7 @@ class SignUpViewController: UIViewController {
                     print("Cancel button tapped")
                 }
                 
-                //Add OK and Cancel button to dialog message
+                //Add Confirm and Cancel button to dialog message
                 dialogMessage.addAction(confirm)
                 dialogMessage.addAction(cancel)
                 
@@ -123,11 +127,17 @@ class SignUpViewController: UIViewController {
                 self.present(dialogMessage, animated: true, completion: nil)
     }
     
+    
+    // This action function is for the sign in button, which calls to the signUp() function
+    
     @IBAction func signInAppear(_ sender: Any) {
         signUp()
         
     }
     
+    
+    // This function checks all the text fields to see if they have been filled out
+    // THIS IS THE FIRST CHECK FOR CREDENTIALS
    
     func didRegisterAccountValidation(input: String?) -> Bool {
         var validInput = false
@@ -137,31 +147,18 @@ class SignUpViewController: UIViewController {
         return validInput
     }
     
-func didRegisterAccountNewUser(username: String) -> Bool {
-    let newUser = !DBHelperUser.dbHelperUser.isUserRegistered(username: username)
-    return newUser
-}
     
-//    func regexPasswordValidation() -> Bool {
-//
-//                //At least Eight characters + One capital    + One lowercase  + One number  + One special character
-//        let passwordPattern = #"(?=.{8,})"# + #"(?=.[A-Z])"# + #"(?=.[a-z])"# + #"(?=.\d)"# + #"(?=.[ !$%&?._-])"#
-//
-//
-//        let passwordPatternRegex = try! NSRegularExpression(pattern: passwordPattern)
-//        let passwordCheck = NSPredicate(format: "SELF MATCHES %@",passwordPatternRegex)
-//
-//        return passwordCheck.evaluate(with: passwordPattern)
-//
-//    }
-//
-//    func regexEmailValidation() -> Bool {
-//
-//        let emailPatternRegex = try! NSRegularExpression(pattern: #"^\S+@\S+.\S+$"#)
-//        let emailCheck = NSPredicate(format: "SELF MATCHES %@",emailPatternRegex)
-//
-//        return emailCheck.evaluate(with: emailPatternRegex)
-//    }
+    // This function checks to see if the username/email belongs to a new user
+    // If new user, create new user :)
+    
+    func didRegisterAccountNewUser(username: String) -> Bool {
+        let newUser = !DBHelperUser.dbHelperUser.isUserRegistered(username: username)
+        return newUser
+    }
+    
+    
+    // This function uses regex to check if the user is following correct inputs
+    // Also calls various different functions
 
     func regexCredentials(username: String, password: String, repassword: String) -> Bool {
         var validation = false
@@ -188,10 +185,16 @@ func didRegisterAccountNewUser(username: String) -> Bool {
         return validation
     }
     
+    
+    // This function checks if the email follows correct credentials (ex: abc@123.com)
+    
     func validUsername(username: String) -> Bool {
         let usernamePatternRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         return regexValidation(value: username, regex: usernamePatternRegex)
     }
+    
+    
+    // This function checks if the password is greater than or equal to 8 characters
     
     func passwordLength(password: String) -> Bool {
         var longPassword = false
@@ -200,6 +203,9 @@ func didRegisterAccountNewUser(username: String) -> Bool {
         }
         return longPassword
     }
+    
+    
+    // This function checks if the password has 1 uppercase, 1 lowercase, 1 number, and 1 special character
     
     func passwordStrength(password: String) -> Bool {
         var strPassword = false
@@ -218,42 +224,32 @@ func didRegisterAccountNewUser(username: String) -> Bool {
         return strPassword
     }
     
+    
+    // This function checks if the password and the Re-EnterPassword are the same
+    
     func passwordMatch(password: String, repassword: String) -> Bool {
      return password == repassword
     }
+    
+    
+    // This function validates our regex by filtering through it to find potential errors
     
     func regexValidation(value: String, regex: String) -> Bool {
         let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
         return predicate.evaluate(with: value)
     }
 
-//    func test() {
-//        errorMessage.text = "HELP"
-//    }
     
-func signUp() {
+    // This function checks CoreData for our user, seeing if they have registered yet, or if they register for the first time
+    // If the user doesn't input enough credentials, give error message "Please input Credentials"
     
-    //errorMessage.text = "HELP"
-    let name = enterNameTextField.text!
-    let username = enterEmailTextField.text!
-    let password = enterPasswordTextField.text!
-    let reEnterPassword = ReEnterPasswordTextField.text!
-    let mobile = mobileNumberTextField.text!
+    func signUp() {
+        let name = enterNameTextField.text!
+        let username = enterEmailTextField.text!
+        let password = enterPasswordTextField.text!
+        let reEnterPassword = ReEnterPasswordTextField.text!
+        let mobile = mobileNumberTextField.text!
     
-    
-    
-    
-    
-            //At least Eight characters + One capital    + One lowercase  + One number  + One special character
-    //let passwordPattern = #"(?=.{8,})"# + #"(?=.[A-Z])"# + #"(?=.[a-z])"# + #"(?=.\d)"# + #"(?=.[ !$%&?._-])"#
-    
-    // Minimum 8 characters at least 1 Uppercase Alphabet, 1 Lowercase Alphabet, 1 Number and 1 Special Character
-//    let regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&])[A-Za-z\\d$@$!%*?&]{8,}"
-//    let isMatched = NSPredicate(format:"SELF MATCHES %@", regex).evaluate(with: enterPasswordTextField.text)
-    
-    //let emailPatternRegex = try! NSRegularExpression(pattern: #"^\S+@\S+.\S+$"#)
-    //let passwordPatternRegex = try! NSRegularExpression(pattern: passwordPattern)
-        
     if !(didRegisterAccountValidation(input: name) && didRegisterAccountValidation(input: username) && didRegisterAccountValidation(input: password) && didRegisterAccountValidation(input: reEnterPassword) && didRegisterAccountValidation(input: mobile)) {
         self.errorMessage.text = "Please input credentials."
         
@@ -268,38 +264,5 @@ func signUp() {
                 DBHelperUser.dbHelperUser.createUser(nameValue: name, emailValue: username, passwordValue: password, reEnterPasswordValue: reEnterPassword, mobileValue: mobile)
                 self.errorMessage.text = "Registered succesfully! Please log in."
             }
-}
-    
-
-//func saveDataToKeyChain() {
-//    if rememberMe.isOn {
-//        //save user data to keychain
-//
-//        let request : [String : Any] = [kSecClass as String : kSecClassGenericPassword, kSecAttrAccount as String : enterEmailTextField.text!]
-//
-//        let attributeUsername: [String: Any] = [kSecAttrAccount as String: enterEmailTextField!]
-//
-//        let attributePassword: [String: Any] = [kSecValueData as String: enterPasswordTextField.text!.data(using: .utf8)!]
-//
-//        if SecItemUpdate(request as CFDictionary, attributePassword as CFDictionary) == noErr && SecItemUpdate(request as CFDictionary, attributeUsername as CFDictionary) == noErr  {
-//            print("User data saved in keychain.")
-//        } else {
-//            print("Error.")
-//        }
-//        //save this user to userDefaults
-//        let userDefaults = UserDefaults.standard
-//        userDefaults.set(enterEmailTextField.text!, forKey: "UserRemembered")
-//        }
-//    if rememberMe.isOn == false {
-//        let request: [String: Any] = [kSecClass as String: kSecClassGenericPassword, kSecAttrAccount as String: enterEmailTextField.text!]
-//
-//        if SecItemDelete(request as CFDictionary) == noErr {
-//            print("User data deleted.")
-//        }
-//        else {
-//            print("Error.")
-//        }
-//    }
-//
-//    }
+    }
 }

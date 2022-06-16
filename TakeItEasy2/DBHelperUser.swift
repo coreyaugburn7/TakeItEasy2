@@ -20,7 +20,7 @@ class DBHelperUser {
         var user = User()
         var fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetchRequest.predicate = NSPredicate(format: "username == %@", username)
-        fetchRequest.fetchLimit = 1 //to fetch only the first item with the parameter "name"
+        fetchRequest.fetchLimit = 1 //to fetch only the first item with the parameter "username"
         do {
             let request = try context?.fetch(fetchRequest) as! [User]
             if request.count != 0 {
@@ -53,7 +53,7 @@ class DBHelperUser {
     }
     
     //function to get User for password validation
-    func getOne(username : String) -> User { //get one student with name
+    func getOne(username : String) -> User { //get one user with name
         var user = User()
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetchRequest.predicate = NSPredicate(format: "username == %@", username)
